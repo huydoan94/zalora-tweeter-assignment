@@ -2,6 +2,8 @@ import { actionTypes, actions } from './Main.actions';
 import { ERROR, MAX_CHARS } from './Main.constants';
 import splitMessage from '../utils/splitMessage';
 
+// Epic is for stream event link sending and receiving data from server
+// These logic can be moved to server easily for further expand.
 export const mainEpic = (action$) => {
   return action$.ofType(actionTypes.CREATE_MESSAGE.START)
     .map(({ payload: message = '' }) => {
